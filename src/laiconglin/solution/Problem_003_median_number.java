@@ -7,10 +7,10 @@ public class Problem_003_median_number {
 		int aLen = A.length;
 		int bLen = B.length;
 		if (aLen > bLen) {
-			median = this.findMedian(B, A);
+			median = this.findMedian(B, 0, bLen - 1, A, 0, aLen - 1);
 			//median = this.findMedianSimple(B, A);
 		} else {
-			median = this.findMedian(A, B);
+			median = this.findMedian(A, 0, aLen - 1, B, 0, bLen -1);
 			//median = this.findMedianSimple(A, B);
 		}
 		return median;
@@ -55,74 +55,85 @@ public class Problem_003_median_number {
 		return median;
 	}
 	*/
-	private double findMedian(int A[], int B[]) {
+	private double findMedian(int A[], int aStartPos, int aEndPos, int B[], int bStartPos, int bEndPos) {
 		double median = 0.0;
-		int aLen = A.length;
-		int bLen = B.length;
-
+		int aLen = aEndPos - aStartPos + 1;
+		int bLen = bEndPos - bStartPos + 1;
+		System.out.println("INFO:");
+		System.out.print("[");
+		for(int i = aStartPos; i <= aEndPos; i++) {
+			System.out.print(A[i]);
+			if(i != aEndPos) {
+				System.out.print(", ");
+			}
+		}
+		System.out.println("]");
+		System.out.print("[");
+		for(int i = bStartPos; i <= bEndPos; i++) {
+			System.out.print(B[i]);
+			if(i != bEndPos) {
+				System.out.print(", ");
+			}
+		}
+		System.out.println("]");
 		if (aLen == 0) {
 			if ((bLen % 2) == 1) {
-				return B[bLen / 2];
+				return B[bLen / 2 + bStartPos];
 			} else {
-				return (B[bLen / 2] + B[bLen / 2 - 1]) / 2.0;
+				return (B[bLen / 2 + bStartPos] + B[bLen / 2 - 1 + bStartPos]) / 2.0;
 			}
 		}
 
-		int aMid = A[aLen / 2];
-		int bMid = B[bLen / 2];
+		int aMid = A[aLen / 2 + aStartPos];
+		int bMid = B[bLen / 2 + bStartPos];
 		int cutSize = (aLen / 2);
 		if(aLen % 2 == 0) {
 			cutSize = cutSize - 1;
 		}
-		int[] nextA = new int[aLen - cutSize];
-		int[] nextB = new int[bLen - cutSize];
 		if (aLen == 1) {
 			if (bLen == 1) {
-				median = (A[0] + B[0]) / 2.0;
+				median = (A[0 + aStartPos] + B[0 + bStartPos]) / 2.0;
 			} else if (bLen > 1) {
 				if (bLen % 2 == 1)
-					median = this.findMedian1AndOddArrar(A[0], B);
+					median = this.findMedian1AndOddArrar(A[0 + aStartPos], B, bStartPos, bEndPos);
 				else
-					median = this.findMedian1AndEvenArrar(A[0], B);
+					median = this.findMedian1AndEvenArrar(A[0 + aStartPos], B, bStartPos, bEndPos);
 			}
 		} else if (aLen == 2) {
 			if (bLen == 2)
-				median = this.MO4(A[0], A[1], B[0], B[1]);
+				median = this.MO4(A[0 + aStartPos], A[1 + aStartPos], B[0 + bStartPos], B[1 + bStartPos]);
 			else if (bLen > 2) {
 				if ((bLen % 2) == 1) {
-					median = this.MO3(B[bLen / 2],
-							Math.max(A[0], B[bLen / 2 - 1]),
-							Math.min(A[1], B[bLen / 2 + 1]));
+					median = this.MO3(B[bLen / 2 + bStartPos],
+							Math.max(A[0 + aStartPos], B[bLen / 2 - 1 + bStartPos]),
+							Math.min(A[1 + aStartPos], B[bLen / 2 + 1 + bStartPos]));
 				} else if ((bLen % 2) == 0) {
-					median = this.MO4(B[bLen / 2], B[bLen / 2 - 1],
-							Math.max(A[0], B[bLen / 2 - 2]),
-							Math.min(A[1], B[bLen / 2 + 1]));
+					median = this.MO4(B[bLen / 2 + bStartPos], B[bLen / 2 - 1 + bStartPos],
+							Math.max(A[0 + aStartPos], B[bLen / 2 - 2 + bStartPos]),
+							Math.min(A[1 + aStartPos], B[bLen / 2 + 1 + bStartPos]));
 				}
 			}
 		} else {
-
-			
 			if (aMid > bMid) {
-				System.arraycopy(A, 0, nextA, 0, aLen - cutSize );
-				System.arraycopy(B, cutSize, nextB, 0, bLen - cutSize);
+				median = this.findMedian(A, 0 + aStartPos, aStartPos + aLen - cutSize - 1, B, bStartPos + cutSize, bEndPos);
 			} else {
-				System.arraycopy(A, cutSize, nextA, 0, aLen - cutSize);
-				System.arraycopy(B, 0, nextB, 0, bLen - cutSize);
+				median = this.findMedian(A, cutSize + aStartPos, aEndPos, B, bStartPos, bStartPos + bLen - cutSize - 1);
 			}
-			median = this.findMedian(nextA, nextB);
 		}
 		return median;
 	}
 
-	private double findMedian1AndOddArrar(int num, int B[]) {
-		double bMid = B[B.length / 2];
+	private double findMedian1AndOddArrar(int num, int B[], int bStartPos, int bEndPos) {
+		int bLen = bEndPos - bStartPos + 1;
+		double bMid = B[bLen / 2 + bStartPos];
 		double another = this
-				.MO3(num, B[B.length / 2 - 1], B[B.length / 2 + 1]);
+				.MO3(num, B[bLen / 2 - 1], B[bLen / 2 + 1]);
 		return (bMid + another) / 2;
 	}
 
-	private double findMedian1AndEvenArrar(int num, int B[]) {
-		return this.MO3(num, B[B.length / 2 - 1], B[B.length / 2]);
+	private double findMedian1AndEvenArrar(int num, int B[], int bStartPos, int bEndPos) {
+		int bLen = bEndPos - bStartPos + 1;
+		return this.MO3(num, B[bLen / 2 - 1 + bStartPos], B[bLen / 2 + bStartPos]);
 	}
 
 	private double MO3(int a, int b, int c) {
@@ -143,13 +154,10 @@ public class Problem_003_median_number {
 	
 	public static void main(String[] args) {
 		Problem_003_median_number solution = new Problem_003_median_number();
-		int[] A = new int [30000000];
-		int[] B = new int [30000000];
+		int[] A = { 3,5,6,7,8 };
+		int[] B = { 1,2,4,9,10};
 		long start = System.currentTimeMillis();
-		for(int i = 0; i < 30000000; i++) {
-			A[i] = 2 * i;
-			B[i] = 2 * i + 1;
-		}
+
 		long end = System.currentTimeMillis();
 		System.out.println("init time: " + (end - start)  + "ms");
 		start = System.currentTimeMillis();
