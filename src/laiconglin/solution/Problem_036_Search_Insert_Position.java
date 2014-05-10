@@ -37,7 +37,6 @@ public class Problem_036_Search_Insert_Position {
         return midIndex;      
     }
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 

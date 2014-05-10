@@ -35,7 +35,6 @@ public class Problem_007_Zigzag_conversion {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Problem_007_Zigzag_conversion solution = new Problem_007_Zigzag_conversion();
 		String test = "A";
 		System.out.println(solution.convert(test, 1));

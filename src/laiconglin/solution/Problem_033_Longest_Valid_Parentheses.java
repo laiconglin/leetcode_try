@@ -44,7 +44,6 @@ public class Problem_033_Longest_Valid_Parentheses {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		String test = "()";
 		Problem_033_Longest_Valid_Parentheses solution = new Problem_033_Longest_Valid_Parentheses();
 		System.out.println(solution.longestValidParentheses(test));

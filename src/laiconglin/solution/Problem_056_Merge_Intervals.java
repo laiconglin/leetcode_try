@@ -52,7 +52,6 @@ public class Problem_056_Merge_Intervals {
     }
     
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Problem_056_Merge_Intervals solution = new Problem_056_Merge_Intervals();
 		ArrayList<Interval> intervals = new ArrayList<Interval>();
 		intervals.add(new Interval(1, 3));

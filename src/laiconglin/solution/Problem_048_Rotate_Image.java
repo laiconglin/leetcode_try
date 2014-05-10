@@ -42,7 +42,6 @@ public class Problem_048_Rotate_Image {
 		System.out.println();
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[][] matrix = { 
 				{ 1, 2, 3, 4 }, 
 				{ 2, 0, 0, 5 }, 

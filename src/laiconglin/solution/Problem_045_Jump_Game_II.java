@@ -47,7 +47,6 @@ public class Problem_045_Jump_Game_II {
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Problem_045_Jump_Game_II solution = new Problem_045_Jump_Game_II();
 		int[] A = {2,3,1,1,4};
 		System.out.println(solution.jump(A));

@@ -54,7 +54,6 @@ public class Problem_050_Pow_X_N {
 		return res;      
     }
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("hello");
 	}
 

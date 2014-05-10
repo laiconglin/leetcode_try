@@ -93,7 +93,6 @@ public class Problem_043_Multiply_Strings {
     	return sb.reverse().toString();
     }
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 }

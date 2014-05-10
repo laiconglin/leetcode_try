@@ -20,7 +20,6 @@ public class Problem_001_reverse_words {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		String test = "  the sky is   blue";
 		Problem_001_reverse_words solution = new Problem_001_reverse_words();
 		System.out.println(solution.reverseWords(test));

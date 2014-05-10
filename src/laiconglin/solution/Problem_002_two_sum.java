@@ -31,7 +31,6 @@ public class Problem_002_two_sum {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] numbers = { 3, 2, 4 };
 		int target = 6;
 		Problem_002_two_sum solution = new Problem_002_two_sum();

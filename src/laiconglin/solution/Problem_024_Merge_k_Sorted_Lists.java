@@ -48,7 +48,6 @@ public class Problem_024_Merge_k_Sorted_Lists {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 

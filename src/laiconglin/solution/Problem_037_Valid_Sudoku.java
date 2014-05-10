@@ -99,7 +99,6 @@ public class Problem_037_Valid_Sudoku {
 		}
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 

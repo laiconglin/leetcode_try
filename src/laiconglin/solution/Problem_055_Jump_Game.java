@@ -87,7 +87,6 @@ public class Problem_055_Jump_Game {
         return can;
     }
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Problem_055_Jump_Game solution = new Problem_055_Jump_Game();
 		int[] A = {3,2,1,0,4};
 		System.out.println(solution.canJump(A));

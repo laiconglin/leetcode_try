@@ -16,7 +16,6 @@ public class Problem_010_palindrome_number {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Problem_010_palindrome_number solution = new Problem_010_palindrome_number();
 		int x = -2147447412;
 		System.out.println(x);

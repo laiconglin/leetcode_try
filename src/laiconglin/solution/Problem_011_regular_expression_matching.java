@@ -56,7 +56,6 @@ public class Problem_011_regular_expression_matching {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Problem_011_regular_expression_matching solution = new Problem_011_regular_expression_matching();
 		// solution.testCase("aa", "a");
 		// solution.testCase("aa", "aa");

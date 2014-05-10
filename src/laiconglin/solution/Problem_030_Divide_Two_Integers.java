@@ -101,7 +101,6 @@ public class Problem_030_Divide_Two_Integers {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 

@@ -3,9 +3,6 @@ package laiconglin.solution;
 public class Problem_042_Trapping_Rain_Water {
 	public int trap(int[] A) {
 		int res = 0;
-		boolean findDescend = false;
-		boolean findAscend = false;
-		boolean findGap = false;
 		int left = -1;
 		int right = -1;
 		for (int i = 0; i < A.length; i++) {
@@ -53,7 +50,6 @@ public class Problem_042_Trapping_Rain_Water {
 		return res;
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 

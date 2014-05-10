@@ -105,7 +105,6 @@ public class Problem_047_Permutations_II {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] num = { 1, 2, 1, 2};
 		Problem_047_Permutations_II solution = new Problem_047_Permutations_II();
 		// solution.reverseArray(num, 0, num.length - 1);

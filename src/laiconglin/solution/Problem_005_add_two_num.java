@@ -61,7 +61,6 @@ public class Problem_005_add_two_num {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 }

@@ -47,7 +47,6 @@ public class Problem_032_Next_Permutation {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] A = { 1, 5 ,3 };
 		Problem_032_Next_Permutation solution = new Problem_032_Next_Permutation();
 		solution.printArr(A);

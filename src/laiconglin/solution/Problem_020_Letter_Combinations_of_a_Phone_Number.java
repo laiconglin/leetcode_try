@@ -83,7 +83,6 @@ public class Problem_020_Letter_Combinations_of_a_Phone_Number {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		String test = "23";
 		Problem_020_Letter_Combinations_of_a_Phone_Number solution = new Problem_020_Letter_Combinations_of_a_Phone_Number();
 		ArrayList<String> res = solution.letterCombinations(test);

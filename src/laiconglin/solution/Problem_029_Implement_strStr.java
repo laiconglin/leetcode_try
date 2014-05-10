@@ -13,7 +13,6 @@ public class Problem_029_Implement_strStr {
         }        
     }
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 

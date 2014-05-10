@@ -139,7 +139,6 @@ public class Problem_051_N_Queens {
     	}
     }
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Problem_051_N_Queens solution = new Problem_051_N_Queens();
 		ArrayList<String[]> res = solution.solveNQueens(4);
 		solution.showResult(res);

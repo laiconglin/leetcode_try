@@ -48,7 +48,6 @@ public class Problem_009_string_to_integer {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Problem_009_string_to_integer solution = new Problem_009_string_to_integer();
 		
 		String str = "-10aa";

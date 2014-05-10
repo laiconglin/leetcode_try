@@ -30,7 +30,6 @@ public class Problem_053_Maximum_Subarray {
         return maxRes;        
     }
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 
