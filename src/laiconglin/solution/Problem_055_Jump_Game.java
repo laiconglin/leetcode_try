@@ -6,8 +6,50 @@ public class Problem_055_Jump_Game {
     		return true;
     	}
     	int [] canJumpFlag = new int[A.length];
-        return this.canJumpFrom(A, 0, canJumpFlag);    
+    	
+    	int distance = this.jumpFromPos(A, 0, canJumpFlag);
+    	return distance != -1;
+        //return this.canJumpFrom(A, 0, canJumpFlag);    
     }
+    
+	public int jumpFromPos(int[] A, int pos, int[] minJumpInit) {
+		int res = -1;
+		int len = A.length;
+		int jumpLen = A[pos];
+		if(pos == len - 1) {
+			return 0;
+		}
+		
+		if (A[pos] == 0) {
+			return -1;
+		} else {
+			if (pos + jumpLen >= len - 1) {
+				return 1;
+			} else {
+				if (minJumpInit[pos] != 0) {
+					return minJumpInit[pos];
+				} else {
+					for (int i = jumpLen; i > 0; i--) {
+						if (i + A[pos + i] <= jumpLen) {
+							continue;
+						}
+						int tmpRes = this.jumpFromPos(A, pos + i, minJumpInit);
+						if (tmpRes == -1) {
+							res = (res == -1) ? -1 : res ;
+						} else {
+							if(res == -1 || (tmpRes + 1) < res) {
+								res = tmpRes + 1;
+							}
+						}
+					}
+					minJumpInit[pos] = res;
+					return res;
+				}
+			}
+		}
+	}
+    
+    
     
     public boolean canJumpFrom(int[] A, int pos, int[] canJumpFlag) {
         boolean can = false;
@@ -46,7 +88,9 @@ public class Problem_055_Jump_Game {
     }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Problem_055_Jump_Game solution = new Problem_055_Jump_Game();
+		int[] A = {3,2,1,0,4};
+		System.out.println(solution.canJump(A));
 	}
 
 }
