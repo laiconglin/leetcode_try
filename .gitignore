@@ -1,6 +1,7 @@
 .classpath
 .project
 .settings
-bin/**/*.class
+**/*.class
+**/*.class
 .DS_Store
 java/.metadata
